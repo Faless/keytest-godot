@@ -11,7 +11,7 @@ InputMap:
 
 "action_shift" -> key "Shift", modifiers == none
 
-"action_shift_a" -> key "A", modifiers = Shift+a
+"action_shift_a" -> key "A", modifiers = Shift
 
 Usage 1
 --
