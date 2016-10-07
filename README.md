@@ -8,7 +8,9 @@ InputMap:
 --
 
 "action_a" -> key "A", modifiers == none
+
 "action_shift" -> key "Shift", modifiers == none
+
 "action_shift_a" -> key "A", modifiers = Shift+a
 
 Usage 1
