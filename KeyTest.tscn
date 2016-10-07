@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "\nextends Node\n\nfunc _ready():\n\tset_fixed_process(true)\n\tset_process_input(true)\n\nfunc _fixed_process(delta):\n\tvar found = false\n\tvar text = \"\"\n\tif Input.is_action_pressed(\"shift\"):\n\t\ttext += \"Shift Pressed\" + \"\\n\"\n\t\tfound = true\n\tif Input.is_action_pressed(\"alt\"):\n\t\ttext += \"Alt Pressed\" + \"\\n\"\n\t\tfound = true\n\tif Input.is_action_pressed(\"ctrl\"):\n\t\ttext += \"Control Pressed\" + \"\\n\"\n\t\tfound = true\n\tif Input.is_action_pressed(\"regular\"):\n\t\ttext += \"A Pressed\" + \"\\n\"\n\t\tfound = true\n\tif Input.is_action_pressed(\"modified\"):\n\t\ttext += \"Shift+A Pressed\"\n\t\tfound = true\n\t\n\tif not found:\n\t\ttext = \"No Key\"\n\t\n\tget_node(\"Control/Label\").set_text(text)\n\nfunc _input(event):\n\tif event.type == InputEvent.KEY and not event.is_echo():\n\t\tprintt(\"Event\", event.is_pressed(), event.scancode)"
+
+[node name="KeyTest" type="Node"]
+
+script/script = SubResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+
+[node name="Label" type="Label" parent="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
